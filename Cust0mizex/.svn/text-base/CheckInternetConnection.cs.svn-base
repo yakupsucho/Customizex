@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Net;
+using System.Net.NetworkInformation;
+
+namespace Cust0mizex
+{
+    class CheckInternetConnection
+    {
+        public bool CheckConnection(string ip)
+        {
+            Ping p = new Ping();
+            bool result;
+            String host = ip;
+            PingReply reply = p.Send(host);
+
+            if(reply.Status == IPStatus.Success)
+               result = true;
+            else
+                result = false;
+
+            return result;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Security.AccessControl;
+using System.Windows.Forms;
+using System.Windows;
+using System.Security.Principal;
+
+namespace Cust0mizex
+{
+    class TakeOwnership
+    {
+        public void SetOwner(string FilePath)
+        {
+            var fs = File.GetAccessControl(FilePath);
+            var sid = fs.GetOwner(typeof(SecurityIdentifier));
+            var ntAccount = sid.Translate(typeof(NTAccount));
+
+            var newAccount = new NTAccount(Environment.UserName);
+            fs.SetOwner(newAccount);
+
+            try
+            {
+                File.SetAccessControl(FilePath, fs);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    }
+}

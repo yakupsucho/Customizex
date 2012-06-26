@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Diagnostics;
+
+namespace Cust0mizex
+{
+    class dllPatcher
+    {
+        TakeOwnership becomeowner = new TakeOwnership();
+        CopyData copy = new CopyData();
+
+        public void ExplorerPatcher(string themename, string BetriebssystemInfo)
+        {
+            becomeowner.SetOwner(@"C:\WINDOWS\system32\ExplorerFrame.dll");
+            copy.CopyFile(@"Themes\WIndows7\" + themename + @"Ressources\ExplorerFrame" + BetriebssystemInfo + @"\ExplorerFrame.dll", @"C:\WINDOWS\system32\");
+        }
+
+        public void PatchFile(string url, string filename)
+        {
+            becomeowner.SetOwner(url);
+            copy.CopyFile(@"DLL-FILES\W7x86\Patch\" + filename + ".dll", @"C:\WINDOWS\system32");
+
+        }
+
+        public void BackupFile(string url, string filename)
+        {
+            copy.CopyFile(@"C:\WINDOWS\system32" + filename + ".dll", @"\DLL-FILES\W7x86\Backup\");
+        }
+    }
+}

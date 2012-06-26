@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Windows.Forms;
+
+namespace Cust0mizex
+{
+    class CopyData
+    {
+        public void CopyFile(string SourcePath, string DestinationPath)
+        {
+            if (File.Exists(SourcePath))
+            {
+                File.Copy(SourcePath, DestinationPath, true);
+            }
+            else
+            {
+                MessageBox.Show("Dateipfad fehlerhaft !");
+            }
+        }
+
+        public void CopyDirectory(string SourceDirectory, string DestinationDirectory)
+        {
+            if (Directory.Exists(SourceDirectory))
+            {
+                Directory.Move(SourceDirectory, DestinationDirectory);
+            }
+            else
+            {
+                MessageBox.Show("Ordnerpfad fehlerhaft !");
+            }
+        }
+    }
+}

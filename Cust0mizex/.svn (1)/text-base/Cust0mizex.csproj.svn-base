@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B909130-9B99-479F-BE51-0B01C23C4B80}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cust0mizex</RootNamespace>
+    <AssemblyName>Cust0mizex</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckInternetConnection.cs" />
+    <Compile Include="CopyData.cs" />
+    <Compile Include="dllPatcher.cs" />
+    <Compile Include="frmDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDownload.Designer.cs">
+      <DependentUpon>frmDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetup.Designer.cs">
+      <DependentUpon>frmSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartup.Designer.cs">
+      <DependentUpon>frmStartup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWarning.Designer.cs">
+      <DependentUpon>frmWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restart.cs" />
+    <Compile Include="ThemeModder.cs" />
+    <Compile Include="Mapper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TakeOwnership.cs" />
+    <EmbeddedResource Include="frmDownload.resx">
+      <DependentUpon>frmDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetup.resx">
+      <DependentUpon>frmSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartup.resx">
+      <DependentUpon>frmStartup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWarning.resx">
+      <DependentUpon>frmWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DLL-FILES\W7x64\Backup\themeservice.dll.backup" />
+    <None Include="DLL-FILES\W7x64\Backup\themeui.dll.backup" />
+    <None Include="DLL-FILES\W7x64\Backup\uxtheme.dll.backup" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Themes\Windows 7\Caesar\Ressources\Fonts\Lucida Grande Bold.ttf" />
+    <None Include="Themes\Windows 7\Caesar\Ressources\Fonts\Lucida Grande.ttf" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11.theme" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Caesar_mod_by_dpcdpc11.msstyles" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Caesar_mod_by_dpcdpc11_bottom.msstyles" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Caesar_mod_dark_by_dpcdpc11.msstyles" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\en-US\aero.msstyles.mui" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\NormalColor\de-DE\shellstyle.dll.mui" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\NormalColor\en-US\shellstyle.dll.mui" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\NormalColor\es-ES\shellstyle.dll.mui" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\NormalColor\fr-FR\shellstyle.dll.mui" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\NormalColor\it-IT\shellstyle.dll.mui" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\NormalColor\nl-NL\shellstyle.dll.mui" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\shellstyle %282%29.olddll" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11_bottom.theme" />
+    <None Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_dark_by_dpcdpc11.theme" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DLL-FILES\W7x86\Backup\" />
+    <Folder Include="DLL-FILES\W7x86\Patch\" />
+    <Folder Include="DLL-FILES\W8x64\Backup\" />
+    <Folder Include="DLL-FILES\W8x64\Patch\" />
+    <Folder Include="DLL-FILES\W8x86\Backup\" />
+    <Folder Include="DLL-FILES\W8x86\Patch\" />
+    <Folder Include="Themes\Windows XP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL-FILES\W7x64\Patch\themeservice.dll" />
+    <Content Include="DLL-FILES\W7x64\Patch\themeui.dll" />
+    <Content Include="DLL-FILES\W7x64\Patch\uxtheme.dll" />
+    <Content Include="Themes\Windows 7\Caesar\Preview\Caesar_mod_preview.png" />
+    <Content Include="Themes\Windows 7\Caesar\Ressources\ExplorerFrame\x64\ExplorerFrame.dll" />
+    <Content Include="Themes\Windows 7\Caesar\Ressources\ExplorerFrame\x86\ExplorerFrame.dll" />
+    <Content Include="Themes\Windows 7\Caesar\Ressources\Start Orbs\Blocks Borderless_small icons.bmp" />
+    <Content Include="Themes\Windows 7\Caesar\Ressources\Start Orbs\Blocks.bmp" />
+    <Content Include="Themes\Windows 7\Caesar\Ressources\Start Orbs\Nuala Start Apple with Glow.bmp" />
+    <Content Include="Themes\Windows 7\Caesar\Ressources\Wallpaper\Classical_2560x1600.png" />
+    <Content Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\NormalColor\shellstyle.dll" />
+    <Content Include="Themes\Windows 7\Caesar\Theme\Caesar_mod_by_dpcdpc11\Shell\shellstyle.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

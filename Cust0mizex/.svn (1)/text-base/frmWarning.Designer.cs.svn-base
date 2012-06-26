@@ -1,0 +1,87 @@
+﻿namespace Cust0mizex
+{
+    partial class frmWarning
+    {
+        /// <summary>
+        /// Erforderliche Designervariable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Verwendete Ressourcen bereinigen.
+        /// </summary>
+        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Vom Windows Form-Designer generierter Code
+
+        /// <summary>
+        /// Erforderliche Methode für die Designerunterstützung.
+        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.btnRestartNow = new System.Windows.Forms.Button();
+            this.btnRestartLater = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(12, 28);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(374, 13);
+            this.lblMessage.TabIndex = 0;
+            this.lblMessage.Text = "Der Vorgang wurde erfolgreich abgeschlossen. Nun wird ein Neustart benötigt";
+            // 
+            // btnRestartNow
+            // 
+            this.btnRestartNow.Location = new System.Drawing.Point(12, 61);
+            this.btnRestartNow.Name = "btnRestartNow";
+            this.btnRestartNow.Size = new System.Drawing.Size(133, 23);
+            this.btnRestartNow.TabIndex = 1;
+            this.btnRestartNow.Text = "Jetzt Neustarten";
+            this.btnRestartNow.UseVisualStyleBackColor = true;
+            this.btnRestartNow.Click += new System.EventHandler(this.btnRestartNow_Click);
+            // 
+            // btnRestartLater
+            // 
+            this.btnRestartLater.Location = new System.Drawing.Point(256, 61);
+            this.btnRestartLater.Name = "btnRestartLater";
+            this.btnRestartLater.Size = new System.Drawing.Size(131, 23);
+            this.btnRestartLater.TabIndex = 2;
+            this.btnRestartLater.Text = "Später Neustarten";
+            this.btnRestartLater.UseVisualStyleBackColor = true;
+            // 
+            // frmWarning
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(399, 99);
+            this.Controls.Add(this.btnRestartLater);
+            this.Controls.Add(this.btnRestartNow);
+            this.Controls.Add(this.lblMessage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmWarning";
+            this.Text = "  Neustart benötigt !";
+            this.Load += new System.EventHandler(this.frmWarning_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button btnRestartNow;
+        private System.Windows.Forms.Button btnRestartLater;
+    }
+}

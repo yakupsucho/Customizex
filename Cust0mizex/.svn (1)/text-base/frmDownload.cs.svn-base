@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Net;
+
+namespace Cust0mizex
+{
+    public partial class frmDownload : Form
+    {
+        public frmDownload()
+        {
+            InitializeComponent();
+        }
+        string _url;
+        
+        public string url
+        {
+            get { return _url; }
+            set { _url = value; }
+        }
+
+        private void wbBrowser_FileDownload(Object sender, EventArgs e)
+        {   
+            if (wbBrowser.Url.IsFile)
+            {
+                url = wbBrowser.Url.AbsoluteUri.ToString();
+            }
+        }
+
+        private void btnDOwnload_Click(object sender, EventArgs e)
+        {
+            WebClient webClient = new WebClient();
+            webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
+            webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
+            webClient.DownloadFileAsync(new Uri(url), "test");
+           
+        }
+
+        private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            pbDownloadProgress.Value = e.ProgressPercentage;
+        }
+
+        private void Completed(object sender, AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("Download beendet!");
+        }
+    }
+}

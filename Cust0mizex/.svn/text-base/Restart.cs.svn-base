@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Diagnostics;
+using System.IO;
+
+namespace Cust0mizex
+{
+    class Restart
+    {
+        Process Pr = new Process();
+
+        public void RestartNow()
+        {
+            Pr.StartInfo.FileName = @"cmd.exe";
+            Pr.StartInfo.Arguments = "SHUTDOWN -r -t 0";
+            Pr.Start();
+        }
+    }
+}

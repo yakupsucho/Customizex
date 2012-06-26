@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Diagnostics;
+
+namespace Cust0mizex
+{
+    class ThemeModder
+    {
+        public void ThemeIntaller(string ThemeDirectory)
+        {
+            CopyData copy = new CopyData();
+
+            copy.CopyDirectory(ThemeDirectory, @"C:\Windows\Resources\Themes");
+        }
+
+        public void UseTheme(string ThemeName)
+        {
+            Process Pr = new Process();
+
+            Pr.StartInfo.FileName = @"C:\Windows\Resources\Themes\" + ThemeName + ".theme";
+            Pr.Start();
+        }
+    }
+}
